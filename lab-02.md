@@ -1,7 +1,7 @@
 Lab 02 - Plastic waste
 ================
-Insert your name here
-Insert date here
+laurenlatham97
+2/4/21
 
 ## Load packages and data
 
