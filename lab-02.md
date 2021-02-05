@@ -23,6 +23,18 @@ Remove this text, and add your answer for Exercise 1 here.
 # insert code here
 ```
 
+Plot, using histograms, the distribution of plastic waste per capita
+faceted by continent. What can you say about how the continents compare
+to each other in terms of their plastic waste per capita?
+
+``` r
+ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+geom_histogram(bins=15)+facet_wrap(~continent)
+```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_bin).
+
+![](lab-02_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
 ### Exercise 2
 
 ``` r
