@@ -23,9 +23,9 @@ Remove this text, and add your answer for Exercise 1 here.
 # insert code here
 ```
 
-Plot, using histograms, the distribution of plastic waste per capita
-faceted by continent. What can you say about how the continents compare
-to each other in terms of their plastic waste per capita?
+Below is a histogram of the distribution of plastic waste per capita
+faceted by continent. WHAT DOES THIS SAY ABOUT HOW CONTINENTS COMPARE TO
+EACHOTHER??
 
 ``` r
 ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+geom_histogram(bins=15)+facet_wrap(~continent)
@@ -34,6 +34,22 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+geom_histogram(bins=15)+face
     ## Warning: Removed 51 rows containing non-finite values (stat_bin).
 
 ![](lab-02_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
+Below is a density plot demonstrating plastic waste per capita with each
+continent color-coded. I lowered the alpha to 0.3 data from each
+continent can be seen more easily. The color and fill go in the mapping
+aesthetics because they are mapped to specific variables, whereas the
+alpha information goes in the geom characteristics because it is
+information that is used in the same way for each variable (i.e., each
+continent).
+
+``` r
+ggplot(plastic_waste, aes(x=plastic_waste_per_cap, color=continent, fill=continent))+geom_density(alpha=.3)
+```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-02_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 ### Exercise 2
 
