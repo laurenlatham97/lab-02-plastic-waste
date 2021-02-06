@@ -51,6 +51,36 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap, color=continent, fill=contine
 
 ![](lab-02_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
+Below are side by side box plots displaying plastic waste per capita for
+each continent:
+
+``` r
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_boxplot()
+```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_boxplot).
+
+![](lab-02_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+And violin plots…
+
+``` r
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin()
+```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_ydensity).
+
+![](lab-02_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+The violin plots are useful because the display the full distribution of
+the data, unlike the box plots.
+
 ### Exercise 2
 
 ``` r

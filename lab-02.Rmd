@@ -37,7 +37,25 @@ Below is a density plot demonstrating plastic waste per capita with each contine
 ggplot(plastic_waste, aes(x=plastic_waste_per_cap, color=continent, fill=continent))+geom_density(alpha=.3)
 ```
 
+Below are side by side box plots displaying plastic waste per capita for each continent: 
 
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_boxplot()
+```
+
+And violin plots...
+
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin()
+```
+
+The violin plots are useful because the display the full distribution of the data, unlike the box plots. 
 
 ### Exercise 2
 
