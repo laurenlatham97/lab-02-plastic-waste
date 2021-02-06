@@ -13,16 +13,6 @@ library(tidyverse)
 plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
 
-## Exercises
-
-### Exercise 1
-
-Remove this text, and add your answer for Exercise 1 here.
-
-``` r
-# insert code here
-```
-
 Below is a histogram of the distribution of plastic waste per capita
 faceted by continent. WHAT DOES THIS SAY ABOUT HOW CONTINENTS COMPARE TO
 EACHOTHER??
@@ -79,58 +69,55 @@ ggplot(data = plastic_waste,
 ![](lab-02_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 The violin plots are useful because the display the full distribution of
-the data, unlike the box plots.
+the data, unlike the box plots. OK BUT WHAT DO BOX PLOTS DISPLAY THAT
+VIOLIN PLOTS DO NOT? - REVISIT.
 
-### Exercise 2
-
-``` r
-# insert code here
-```
-
-### Exercise 3
-
-Remove this text, and add your answer for Exercise 3 here.
-
-### Exercise 4
-
-Remove this text, and add your answer for Exercise 4 here.
+scatterplot:
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = mismanaged_plastic_waste_per_cap)) +
+  geom_point()
 ```
 
-### Exercise 5
+    ## Warning: Removed 51 rows containing missing values (geom_point).
 
-Remove this text, and add your answer for Exercise 5 here.
+![](lab-02_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+scatterplot-color:
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = mismanaged_plastic_waste_per_cap, color = continent)) +
+  geom_point()
 ```
 
-### Exercise 6
+    ## Warning: Removed 51 rows containing missing values (geom_point).
 
-Remove this text, and add your answer for Exercise 6 here.
+![](lab-02_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = total_pop, color = continent)) +
+  geom_point()
 ```
 
-### Exercise 7
+    ## Warning: Removed 61 rows containing missing values (geom_point).
 
-Remove this text, and add your answer for Exercise 7 here.
+![](lab-02_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = coastal_pop, color = continent)) +
+  geom_point()
 ```
 
-``` r
-# insert code here
-```
+    ## Warning: Removed 51 rows containing missing values (geom_point).
 
-### Exercise 8
+![](lab-02_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
-Remove this text, and add your answer for Exercise 8 here.
-
-``` r
-# insert code here
-```
+Still need to work on fixing up these graphs and making interpretations
+as instructed in the lab, but the base code is all here.

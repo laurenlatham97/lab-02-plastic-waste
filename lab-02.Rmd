@@ -15,17 +15,6 @@ library(tidyverse)
 plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
 
-## Exercises
-
-
-### Exercise 1
-
-Remove this text, and add your answer for Exercise 1 here.
-
-```{r plastic-waste-continent}
-# insert code here
-```
-
 Below is a histogram of the distribution of plastic waste per capita faceted by continent. WHAT DOES THIS SAY ABOUT HOW CONTINENTS COMPARE TO EACHOTHER??
 
 ```{r}
@@ -55,58 +44,37 @@ ggplot(data = plastic_waste,
   geom_violin()
 ```
 
-The violin plots are useful because the display the full distribution of the data, unlike the box plots. 
+The violin plots are useful because the display the full distribution of the data, unlike the box plots. OK BUT WHAT DO BOX PLOTS DISPLAY THAT VIOLIN PLOTS DO NOT? - REVISIT.
 
-### Exercise 2
+scatterplot:
 
-```{r plastic-waste-density}
-# insert code here
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = mismanaged_plastic_waste_per_cap)) +
+  geom_point()
+```
+scatterplot-color: 
+
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = mismanaged_plastic_waste_per_cap, color = continent)) +
+  geom_point()
 ```
 
-### Exercise 3
-
-Remove this text, and add your answer for Exercise 3 here.
-
-### Exercise 4
-
-Remove this text, and add your answer for Exercise 4 here.
-
-```{r plastic-waste-violin}
-# insert code here
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = total_pop, color = continent)) +
+  geom_point()
 ```
 
-### Exercise 5
-
-Remove this text, and add your answer for Exercise 5 here.
-
-```{r plastic-waste-mismanaged}
-# insert code here
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = coastal_pop, color = continent)) +
+  geom_point()
 ```
 
-### Exercise 6
-
-Remove this text, and add your answer for Exercise 6 here.
-
-```{r plastic-waste-mismanaged-continent}
-# insert code here
-```
-
-### Exercise 7
-
-Remove this text, and add your answer for Exercise 7 here.
-
-```{r plastic-waste-population-total}
-# insert code here
-```
-
-```{r plastic-waste-population-coastal}
-# insert code here
-```
-
-### Exercise 8
-
-Remove this text, and add your answer for Exercise 8 here.
-
-```{r recreate-viz}
-# insert code here
-```
+Still need to work on fixing up these graphs and making interpretations as instructed in the lab, but the base code is all here. 
