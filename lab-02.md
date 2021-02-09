@@ -1,4 +1,4 @@
-Lab 02 - Plastic waste
+Lauren Latham - Lab 02 - Plastic waste
 ================
 laurenlatham97
 2/4/21
@@ -14,8 +14,8 @@ plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
 
 Below is a histogram of the distribution of plastic waste per capita
-faceted by continent. WHAT DOES THIS SAY ABOUT HOW CONTINENTS COMPARE TO
-EACHOTHER??
+faceted by continent. AND WHAT DOES THIS SAY ABOUT HOW COUNTRIES
+COMPARE?
 
 ``` r
 ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+geom_histogram(bins=15)+facet_wrap(~continent)
@@ -26,7 +26,7 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+geom_histogram(bins=15)+face
 ![](lab-02_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
 
 Below is a density plot demonstrating plastic waste per capita with each
-continent color-coded. I lowered the alpha to 0.3 data from each
+continent color-coded. I lowered the alpha to 0.3 so that data from each
 continent can be seen more easily. The color and fill go in the mapping
 aesthetics because they are mapped to specific variables, whereas the
 alpha information goes in the geom characteristics because it is
@@ -72,7 +72,8 @@ The violin plots are useful because the display the full distribution of
 the data, unlike the box plots. OK BUT WHAT DO BOX PLOTS DISPLAY THAT
 VIOLIN PLOTS DO NOT? - REVISIT.
 
-scatterplot:
+Relationship between plastic waste per capita and mismanaged plastic
+waste per capita (scatterplot):
 
 ``` r
 ggplot(data = plastic_waste, 
@@ -84,7 +85,17 @@ ggplot(data = plastic_waste,
     ## Warning: Removed 51 rows containing missing values (geom_point).
 
 ![](lab-02_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
-scatterplot-color:
+
+From the above scatterplot we can see that there is a positive
+relationship between plastic waste per capita and mismanaged plastic
+wast per capita (i.e., as plastic waste per capita goes up, mismanaged
+plastic waster per capita also goes up). However, it looks like there
+may be two slightly different patterns, with some countries having a
+very strong positive relationship between these variables, and other
+countries have a somewhat weaker positive relationship.
+
+Relationship between plastic waste per capita and mismanaged plastic
+waste per capita (scatterplot-color country):
 
 ``` r
 ggplot(data = plastic_waste, 
@@ -97,27 +108,39 @@ ggplot(data = plastic_waste,
 
 ![](lab-02_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
+The above scatterplot demonstrates the same relationship described
+earlier between plastic waste per capita and mismanaged plastic waste
+per capita, but the color coding makes it easier to understand the two
+potentially different patterns. It looks like the relationship between
+these variables is weaker for North American and European countries, and
+much stronger for other countries.
+
+Relationship between total population and plastic waste per capita
+(scatterplot):
+
 ``` r
 ggplot(data = plastic_waste, 
-       mapping = aes(x = plastic_waste_per_cap, 
-                     y = total_pop, color = continent)) +
+       mapping = aes(x = total_pop, 
+                     y = plastic_waste_per_cap, color = continent)) +
   geom_point()
 ```
 
     ## Warning: Removed 61 rows containing missing values (geom_point).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](lab-02_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> INSERT
+EXPLANATION
+
+Relationship between coastal population and plastic waste per capita
+(scatterplot):
 
 ``` r
 ggplot(data = plastic_waste, 
-       mapping = aes(x = plastic_waste_per_cap, 
-                     y = coastal_pop, color = continent)) +
+       mapping = aes(x = coastal_pop, 
+                     y = plastic_waste_per_cap, color = continent)) +
   geom_point()
 ```
 
     ## Warning: Removed 51 rows containing missing values (geom_point).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
-
-Still need to work on fixing up these graphs and making interpretations
-as instructed in the lab, but the base code is all here.
+![](lab-02_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> INSERT
+EXPLANATION
