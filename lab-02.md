@@ -14,16 +14,16 @@ plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
 
 Below is a histogram of the distribution of plastic waste per capita
-faceted by continent. AND WHAT DOES THIS SAY ABOUT HOW COUNTRIES
-COMPARE?
+faceted by continent. The histogram reveals that North America contains
+the countries that have the most plastic waste per capita.
 
 ``` r
-ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+geom_histogram(bins=15)+facet_wrap(~continent)
+ggplot(plastic_waste, aes(x=plastic_waste_per_cap,))+geom_histogram(bins=30)+facet_wrap(~continent)
 ```
 
     ## Warning: Removed 51 rows containing non-finite values (stat_bin).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](lab-02_files/figure-gfm/plot-plastic_waste-1.png)<!-- -->
 
 Below is a density plot demonstrating plastic waste per capita with each
 continent color-coded. I lowered the alpha to 0.3 so that data from each
@@ -39,7 +39,7 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap, color=continent, fill=contine
 
     ## Warning: Removed 51 rows containing non-finite values (stat_density).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](lab-02_files/figure-gfm/plot-pastic_waste%202-1.png)<!-- -->
 
 Below are side by side box plots displaying plastic waste per capita for
 each continent:
@@ -53,7 +53,7 @@ ggplot(data = plastic_waste,
 
     ## Warning: Removed 51 rows containing non-finite values (stat_boxplot).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](lab-02_files/figure-gfm/plot-pastic_waste%203-1.png)<!-- -->
 
 And violin plots…
 
@@ -66,11 +66,13 @@ ggplot(data = plastic_waste,
 
     ## Warning: Removed 51 rows containing non-finite values (stat_ydensity).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](lab-02_files/figure-gfm/plot-pastic_waste%204-1.png)<!-- -->
 
 The violin plots are useful because the display the full distribution of
-the data, unlike the box plots. OK BUT WHAT DO BOX PLOTS DISPLAY THAT
-VIOLIN PLOTS DO NOT? - REVISIT.
+the data, unlike the box plots. For example, a bimodal distribution is
+very easily obscured by box plots. Box plots however make it easier to
+discern certain summary statistics (median, upper and lower quartile,
+outliers).
 
 Relationship between plastic waste per capita and mismanaged plastic
 waste per capita (scatterplot):
@@ -84,7 +86,7 @@ ggplot(data = plastic_waste,
 
     ## Warning: Removed 51 rows containing missing values (geom_point).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](lab-02_files/figure-gfm/plot-pastic_waste%205-1.png)<!-- -->
 
 From the above scatterplot we can see that there is a positive
 relationship between plastic waste per capita and mismanaged plastic
@@ -106,7 +108,7 @@ ggplot(data = plastic_waste,
 
     ## Warning: Removed 51 rows containing missing values (geom_point).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](lab-02_files/figure-gfm/plot-pastic_waste%206-1.png)<!-- -->
 
 The above scatterplot demonstrates the same relationship described
 earlier between plastic waste per capita and mismanaged plastic waste
@@ -127,8 +129,7 @@ ggplot(data = plastic_waste,
 
     ## Warning: Removed 61 rows containing missing values (geom_point).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> INSERT
-EXPLANATION
+![](lab-02_files/figure-gfm/plot-pastic_waste-1.png)<!-- -->
 
 Relationship between coastal population and plastic waste per capita
 (scatterplot):
@@ -142,5 +143,14 @@ ggplot(data = plastic_waste,
 
     ## Warning: Removed 51 rows containing missing values (geom_point).
 
-![](lab-02_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> INSERT
-EXPLANATION
+![](lab-02_files/figure-gfm/plot-pastic_waste%207-1.png)<!-- -->
+
+Neither total population nor coastal population appear to be strongly
+linearly associated with plastic waste per capita. It’s somewhat
+difficult to tell however, because many of the countries cluster around
+the same total population and coastal population. Interestingly, a lot
+of the Asian countries with very large coastal populations seem to be
+relatively low in plastic waster per capita, this is less true however
+for total population. The Oceanic and NOrth American countries however
+with lower coastal population and total population seem to fall pretty
+high in plastic waste per capita.
