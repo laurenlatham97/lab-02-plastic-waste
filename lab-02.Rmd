@@ -14,12 +14,15 @@ library(tidyverse)
 ```{r load-data, message=FALSE}
 plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
+### Exercise 1 - distribution of plastic waste faceted by continent
 
-Below is a histogram of the distribution of plastic waste per capita faceted by continent. The histogram reveals that North America contains the countries that have the most plastic waste per capita. 
+Below is a histogram of the distribution of plastic waste per capita faceted by continent. The histogram reveals that North America contains the countries that have the most plastic waste per capita. Additionally, the distribution seems to be positively skewed for most continents. 
 
 ```{r plot-plastic_waste, fig.height=8, fig.width=8}
 ggplot(plastic_waste, aes(x=plastic_waste_per_cap,))+geom_histogram(bins=30)+facet_wrap(~continent)
 ```
+
+### Exercise 2 - density plot of pastic waste per capita
 
 Below is a density plot demonstrating plastic waste per capita with each continent color-coded. I lowered the alpha to 0.3 so that data from each continent can be seen more easily. The color and fill go in the mapping aesthetics because they are mapped to specific variables, whereas the alpha information goes in the geom characteristics because it is information that is used in the same way for each variable (i.e., each continent). 
 
@@ -27,6 +30,7 @@ Below is a density plot demonstrating plastic waste per capita with each contine
 ggplot(plastic_waste, aes(x=plastic_waste_per_cap, color=continent, fill=continent))+geom_density(alpha=.3)
 ```
 
+### Exercise 3 - box plots and violin plots
 Below are side by side box plots displaying plastic waste per capita for each continent: 
 
 ```{r plot-pastic_waste 3, fig.height=8, fig.width=8}
@@ -48,7 +52,7 @@ ggplot(data = plastic_waste,
 
 The violin plots are useful because the display the full distribution of the data, unlike the box plots. For example, a bimodal distribution is very easily obscured by box plots. Box plots however make it easier to discern certain summary statistics (median, upper and lower quartile, outliers). 
 
-
+### Exercise 4 - scatterplots
 Relationship between plastic waste per capita and mismanaged plastic waste per capita (scatterplot):
 
 ```{r plot-pastic_waste 5, fig.height=8, fig.width=8}

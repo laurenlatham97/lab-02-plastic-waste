@@ -13,9 +13,12 @@ library(tidyverse)
 plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
 
+### Exercise 1 - distribution of plastic waste faceted by continent
+
 Below is a histogram of the distribution of plastic waste per capita
 faceted by continent. The histogram reveals that North America contains
-the countries that have the most plastic waste per capita.
+the countries that have the most plastic waste per capita. Additionally,
+the distribution seems to be positively skewed for most continents.
 
 ``` r
 ggplot(plastic_waste, aes(x=plastic_waste_per_cap,))+geom_histogram(bins=30)+facet_wrap(~continent)
@@ -24,6 +27,8 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap,))+geom_histogram(bins=30)+fac
     ## Warning: Removed 51 rows containing non-finite values (stat_bin).
 
 ![](lab-02_files/figure-gfm/plot-plastic_waste-1.png)<!-- -->
+
+### Exercise 2 - density plot of pastic waste per capita
 
 Below is a density plot demonstrating plastic waste per capita with each
 continent color-coded. I lowered the alpha to 0.3 so that data from each
@@ -40,6 +45,8 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap, color=continent, fill=contine
     ## Warning: Removed 51 rows containing non-finite values (stat_density).
 
 ![](lab-02_files/figure-gfm/plot-pastic_waste%202-1.png)<!-- -->
+
+### Exercise 3 - box plots and violin plots
 
 Below are side by side box plots displaying plastic waste per capita for
 each continent:
@@ -73,6 +80,8 @@ the data, unlike the box plots. For example, a bimodal distribution is
 very easily obscured by box plots. Box plots however make it easier to
 discern certain summary statistics (median, upper and lower quartile,
 outliers).
+
+### Exercise 4 - scatterplots
 
 Relationship between plastic waste per capita and mismanaged plastic
 waste per capita (scatterplot):
